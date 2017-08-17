@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="zzdx@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="zzdx">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="express"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="kaoshianpai"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="news"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="teach"/>
+    <schema id="11" parent="1" name="tour"/>
+    <table id="12" parent="2" name="introduce"/>
+    <table id="13" parent="2" name="messenger"/>
+    <table id="14" parent="2" name="studyclass"/>
+    <table id="15" parent="2" name="type"/>
+    <table id="16" parent="2" name="users"/>
+    <column id="17" parent="12" name="introduceId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="12" name="typeId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="12" name="introducePage">
+      <Position>3</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="12" name="introduceAddress">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="12" name="introduceGps">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="12" name="introduceName">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="23" parent="12" name="introduce_type_typeId_fk">
+      <ColNames>typeId</ColNames>
+    </index>
+    <index id="24" parent="12" name="introduce_introduceName_uindex">
+      <ColNames>introduceName</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>introduceId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="26" parent="12" name="introduce_introduceName_uindex">
+      <ColNames>introduceName</ColNames>
+      <UnderlyingIndexName>introduce_introduceName_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="27" parent="12" name="introduce_type_typeId_fk">
+      <ColNames>typeId</ColNames>
+      <RefSchemaName>zzdx</RefSchemaName>
+      <RefTableName>type</RefTableName>
+      <RefColNames>typeId</RefColNames>
+    </foreign-key>
+    <column id="28" parent="13" name="messengerId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="13" name="messengerTitle">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="messengerPage">
+      <Position>3</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="13" name="userId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="13" name="messenger_users_userId_fk">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="33" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>messengerId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="13" name="messenger_users_userId_fk">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>zzdx</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <column id="35" parent="14" name="classId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="14" name="className">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="14" name="classTime">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="14" name="userId">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="14" name="studyclass_users_userId_fk">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="40" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>classId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="14" name="studyclass_users_userId_fk">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>zzdx</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <column id="42" parent="15" name="typeId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="15" name="typeName">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="15" name="typeColor">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;#0ea8e3&apos;</DefaultExpression>
+    </column>
+    <key id="45" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>typeId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="16" name="userId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="16" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="16" name="userPassword">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="16" name="userType">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="50" parent="16" name="users_userName_uindex">
+      <ColNames>userName</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="52" parent="16" name="users_userName_uindex">
+      <ColNames>userName</ColNames>
+      <UnderlyingIndexName>users_userName_uindex</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
